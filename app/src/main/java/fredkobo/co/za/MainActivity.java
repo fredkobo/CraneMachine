@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView clawImage;
     private Button grabButton;
     private ImageView bigWhiteBox;
+    private View arm;
     private float boxYPosition;
 
     @Override
@@ -26,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         clawImage = findViewById(R.id.claw);
         grabButton = findViewById(R.id.grab_button);
         bigWhiteBox = findViewById(R.id.large_white_box);
-        (findViewById(R.id.large_white_box)).getHeight();
-        boxYPosition = (findViewById(R.id.large_white_box)).getHeight();
+        arm = findViewById(R.id.arm);
 
         controlCircle.setOnTouchListener(new ControlCircleDragListener(controlCircle.getX(), controlCircle.getY()));
         grabButton.setOnClickListener(new View.OnClickListener() {
@@ -39,9 +39,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void invokeGrab() {
+
         final ObjectAnimator descendAnimation = ObjectAnimator.ofFloat(clawImage, "translationY", 1100f);
         descendAnimation.setDuration(2000);
         descendAnimation.start();
+
+        arm.setX(clawImage.getX() + (clawImage.getWidth()/2));
+        final ObjectAnimator armDescendAnimation = ObjectAnimator.ofFloat(arm, "translationY", 1100f);
+        armDescendAnimation.setDuration(2000);
+        armDescendAnimation.start();
 
         final ObjectAnimator presieAscendAnimation = ObjectAnimator.ofFloat(bigWhiteBox, "translationY", -1100f);
         presieAscendAnimation.setDuration(2000);
@@ -52,11 +58,14 @@ public class MainActivity extends AppCompatActivity {
         final ObjectAnimator presieGoDropAnimation = ObjectAnimator.ofFloat(bigWhiteBox, "translationY", 1000f);
         presieGoDropAnimation.setDuration(2000);
 
+
+
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 descendAnimation.reverse();
+                armDescendAnimation.reverse();
                 presieAscendAnimation.start();
             }
         },3000);
