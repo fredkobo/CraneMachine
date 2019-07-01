@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="@color/lightGray">
+
+        <View
+            android:id="@+id/divider_line"
+            android:layout_width="4dp"
+            android:layout_height="300dp"
+            android:background="@android:color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="40dp"/>
+
+        <ImageView
+            android:id="@+id/small_green_box"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_box_dotted"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/divider_line"/>
+
+        <ImageView
+            android:id="@+id/large_white_box"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/presie_image"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-20dp"
+            android:layout_toEndOf="@+id/small_green_box" />
+
+        <ImageView
+            android:id="@+id/large_green_box"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ic_box_dotted"
+            android:layout_alignParentBottom="true"
+            android:layout_toEndOf="@+id/large_white_box"/>
+
+        <ImageView
+            android:id="@+id/small_orange_box"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_box_orange"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="-120dp"
+            android:layout_toEndOf="@+id/large_green_box" />
+
+        <ImageView
+            android:id="@+id/small_white_box"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/presie_image"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:rotation="-30"
+            android:layout_toEndOf="@+id/small_orange_box" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="32dp"
+        android:padding="4dp"
+        android:background="@drawable/control_background_rounded_rect">
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/control_ball_background"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/grab_button_background"
+        android:layout_marginTop="16dp"
+        android:text="GRAB"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
