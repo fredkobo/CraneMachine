@@ -37,7 +37,7 @@
                 android:id="@+id/claw"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_claw_closed"
+                android:src="@drawable/ic_claw"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="40dp" />
 
