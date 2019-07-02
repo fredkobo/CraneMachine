@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
-
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/claw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/claw_head"
+        android:layout_width="24dp"
+        android:layout_height="12dp"
+        android:src="@drawable/claw_head"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/claw_neck"
+        android:layout_width="20dp"
+        android:layout_height="24dp"
+        android:src="@drawable/claw_neck"
+        android:scaleType="fitCenter"
+        android:layout_below="@id/claw_head"
+        android:layout_marginTop="-4dp"
+        android:layout_centerHorizontal="true"/>
+    <ImageView
+        android:id="@+id/claw_left"
+        android:layout_width="12dp"
+        android:layout_height="24dp"
+        android:src="@drawable/left_claw"
+        android:layout_marginTop="-4dp"
+        android:layout_marginRight="-7dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@id/claw_neck"
+        android:layout_toStartOf="@id/claw_neck"/>
+    <ImageView
+        android:id="@+id/claw_right"
+        android:layout_width="12dp"
+        android:layout_height="24dp"
+        android:src="@drawable/right_claw"
+        android:layout_marginTop="-4dp"
+        android:layout_marginLeft="-8dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@id/claw_neck"
+        android:layout_toEndOf="@id/claw_neck"/>
 </RelativeLayout>

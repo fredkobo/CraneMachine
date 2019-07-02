@@ -12,11 +12,12 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView controlCircle;
-    private ImageView clawImage;
+    private View clawImage;
     private Button grabButton;
     private ImageView bigWhiteBox;
     private View arm;
-    private float boxYPosition;
+    private ImageView leftClaw;
+    private ImageView rightClaw;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         grabButton = findViewById(R.id.grab_button);
         bigWhiteBox = findViewById(R.id.large_white_box);
         arm = findViewById(R.id.arm);
+        leftClaw = findViewById(R.id.claw_left);
+        rightClaw = findViewById(R.id.claw_right);
 
         controlCircle.setOnTouchListener(new ControlCircleDragListener(controlCircle.getX(), controlCircle.getY()));
         grabButton.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void invokeGrab() {
+        openClaw();
 
         final ObjectAnimator descendAnimation = ObjectAnimator.ofFloat(clawImage, "translationY", 1100f);
         descendAnimation.setDuration(2000);
@@ -67,13 +71,14 @@ public class MainActivity extends AppCompatActivity {
                 descendAnimation.reverse();
                 armDescendAnimation.reverse();
                 presieAscendAnimation.start();
+                closeClaw();
             }
         },3000);
 
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                final ObjectAnimator goLeftAnimation = ObjectAnimator.ofFloat(clawImage, "translationX", -200f);
+                final ObjectAnimator goLeftAnimation = ObjectAnimator.ofFloat(clawImage, "translationX", -180f);
                 goLeftAnimation.setDuration(2000);
                 goLeftAnimation.start();
                 presieGoLeftAnimation.start();
@@ -84,9 +89,27 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 presieGoDropAnimation.start();
+                openClaw();
             }
         }, 7000);
 
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                closeClaw();
+            }
+        }, 7500);
+
+    }
+
+    private void openClaw() {
+        leftClaw.animate().rotation(35).start();
+        rightClaw.animate().rotation(-35).start();
+    }
+
+    private void closeClaw() {
+        leftClaw.animate().rotation(-35).start();
+        rightClaw.animate().rotation(35).start();
     }
 
     private class ControlCircleDragListener implements View.OnTouchListener{
