@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CraneMachine</string>
+    <string name="you_have_won">You have won</string>
+    <string name="eb_won">eB 10,000</string>
 </resources>

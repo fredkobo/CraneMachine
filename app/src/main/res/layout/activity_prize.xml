@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal"
+    android:padding="16dp"
+    tools:context=".PrizeActivity">
+
+    <RelativeLayout
+        android:id="@+id/coin_layout"
+        android:layout_width="400dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="150dp"
+        android:paddingLeft="20dp">
+
+        <ImageView
+            android:id="@+id/coin_0"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_eb_coin"/>
+        <ImageView
+            android:id="@+id/coin_1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_0"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_1"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_3"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_2"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_0"
+            android:layout_above="@+id/coin_0"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_5"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_1"
+            android:layout_above="@+id/coin_1"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_6"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_2"
+            android:layout_above="@+id/coin_2"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_7"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_3"
+            android:layout_above="@+id/coin_3"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_8"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_5"
+            android:layout_above="@+id/coin_5"
+            android:src="@drawable/ic_eb_coin"/>
+
+        <ImageView
+            android:id="@+id/coin_9"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_toEndOf="@+id/coin_6"
+            android:layout_above="@+id/coin_6"
+            android:src="@drawable/ic_eb_coin"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_marginTop="200dp"
+            android:id="@+id/box_top"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_box_top"
+            android:scaleType="fitXY"/>
+
+        <ImageView
+            android:id="@+id/box_bottom"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_box_bottom"
+            android:layout_below="@+id/box_top"
+            android:scaleType="fitXY"
+            android:layout_marginTop="-40dp"/>
+
+        <TextView
+            android:id="@+id/you_won"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="130dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:text="@string/you_have_won"/>
+        <TextView
+            android:id="@+id/amount"
+            android:layout_marginLeft="160dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/you_won"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="@string/eb_won"/>
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
